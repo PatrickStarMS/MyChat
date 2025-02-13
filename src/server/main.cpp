@@ -26,8 +26,7 @@ int main(int argc,char **argv)
   EventLoop loop;
   InetAddress addr(ip,port);
 
-  // 初始化连接池
-  ConnectionPool::GetConnectionPool();
+  
 
   chatserver chat(&loop, addr, "chatserver");
   chat.start();
