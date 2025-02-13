@@ -20,12 +20,13 @@ public:
     static ConnectionPool &GetConnectionPool(); //获取连接池对象实例
     //给外部提供接口，从连接池中获取一个可用的空闲连接
     std::shared_ptr<Connection> GetConnection();//智能指针自动管理连接的释放
-
+    
     ~ConnectionPool();
 
 private:
     ConnectionPool();
-
+    ConnectionPool(const ConnectionPool&) = delete;
+    ConnectionPool& operator=(const ConnectionPool&) = delete;
     bool LoadConfigFile();
 
     //运行在独立的线程中，专门负责生产新连接
