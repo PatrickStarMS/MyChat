@@ -1,6 +1,3 @@
-//
-// Created by Cmf on 2022/8/24.
-//
 
 #include "server/db/Connection.h"
 #include <muduo/base/Logging.h>
