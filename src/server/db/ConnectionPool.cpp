@@ -1,6 +1,4 @@
-//
-// Created by Cmf on 2022/8/24.
-//
+
 #include <fstream>
 #include "server/db/ConnectionPool.h"
 #include "json.hpp"
