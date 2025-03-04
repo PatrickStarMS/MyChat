@@ -48,5 +48,5 @@ void Connection::RefreshAliveTime() {
 }
 
 long long Connection::GetAliveTime() const {
-    return std::chrono::duration_cast<std::chrono::microseconds>(std::chrono::steady_clock::now() - _aliveTime).count();
+    return std::chrono::duration_cast<std::chrono::milliseconds>(std::chrono::steady_clock::now() - _aliveTime).count();
 }
