@@ -13,7 +13,7 @@ ConnectionPool &ConnectionPool::GetConnectionPool() {
 std::shared_ptr<Connection> ConnectionPool::GetConnection() {
     std::unique_lock<std::mutex> lock(_mtx);
     while (_connectionQueue.empty()) {  //连接为空，就阻塞等待_connectionTimeout时间，如果时间过了，还没唤醒
-        if (std::cv_status::timeout == _cv.wait_for(lock, std::chrono::microseconds(_connectionTimeout))) {
+        if (std::cv_status::timeout == _cv.wait_for(lock, std::chrono::milliseconds(_connectionTimeout))) {
             if (_connectionQueue.empty()) { //就可能还是为空
                 continue;
             }
